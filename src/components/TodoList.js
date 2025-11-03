@@ -10,7 +10,7 @@ function TodoList({ todos, onComplete }) {
           { !todo.completed ? (
             <button onClick={() => onComplete(todo.id)}>Complete</button>
           ) : (
-             <span></span>
+             <span>Completed</span>
            )} 
         </li>
       ))}
