@@ -9,16 +9,17 @@ const App = () => {
   ]);
 
   const handleComplete = (id) => {
-    const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, completed: true } : todo
+    // ✅ Safest way: use functional setState to avoid stale closures
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: true } : todo
+      )
     );
-    setTodos(updatedTodos);
   };
 
   return (
     <div>
-      <h1>Parent Container</h1>
-      <h2>Child Container</h2>
+      <h1>Todo App</h1>
       <TodoList todos={todos} onComplete={handleComplete} />
     </div>
   );

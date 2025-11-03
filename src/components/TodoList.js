@@ -5,11 +5,13 @@ function TodoList({ todos, onComplete }) {
     <ul>
       {todos.map((todo) => (
         <li key={todo.id}>
-          {todo.text}
-          {!todo.completed && (
+          {todo.text}{" "}
+          {!todo.completed ? (
             <button onClick={() => onComplete(todo.id)}>Complete</button>
+          ) : (
+            // ✅ Add this replacement text so Cypress knows the UI updated
+            <span data-testid={`todo-${todo.id}`}>✅ Completed</span>
           )}
-          
         </li>
       ))}
     </ul>
