@@ -1,3 +1,5 @@
+
+
 import React from "react";
 
 function TodoList({ todos, onComplete }) {
@@ -7,11 +9,13 @@ function TodoList({ todos, onComplete }) {
         <li key={todo.id}>
           {todo.text}{" "}
           {!todo.completed ? (
-            <button data-testid={`btn-${todo.id}`} onClick={() => onComplete(todo.id)}>
-  Complete
-</button>
+            <button
+              data-testid={`btn-${todo.id}`}
+              onClick={() => onComplete(todo.id)}
+            >
+              Complete
+            </button>
           ) : (
-            // ✅ Add this replacement text so Cypress knows the UI updated
             <span data-testid={`todo-${todo.id}`}>✅ Completed</span>
           )}
         </li>
