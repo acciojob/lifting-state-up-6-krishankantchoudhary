@@ -9,14 +9,11 @@ function TodoList({ todos, onComplete }) {
         <li key={todo.id}>
           {todo.text}{" "}
           {!todo.completed ? (
-            <button
-              data-testid={`btn-${todo.id}`}
-              onClick={() => onComplete(todo.id)}
-            >
-              Complete
-            </button>
+           <button data-testid={`btn-${todo.id}`} onClick={() => onComplete(todo.id)}>
+  Complete
+</button>
           ) : (
-            <span data-testid={`todo-${todo.id}`}>✅ Completed</span>
+            <span data-testid={`todo-${todo.id}`}>Completed</span>
           )}
         </li>
       ))}
