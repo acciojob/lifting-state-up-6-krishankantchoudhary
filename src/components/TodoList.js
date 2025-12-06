@@ -1,5 +1,3 @@
-
-
 import React from "react";
 
 function TodoList({ todos, onComplete }) {
@@ -8,12 +6,8 @@ function TodoList({ todos, onComplete }) {
       {todos.map((todo) => (
         <li key={todo.id}>
           {todo.text}{" "}
-          {!todo.completed ? (
-           <button data-testid={`btn-${todo.id}`} onClick={() => onComplete(todo.id)}>
-  Complete
-</button>
-          ) : (
-            <span data-testid={`todo-${todo.id}`}>Completed</span>
+          {!todo.completed && (
+            <button onClick={() => onComplete(todo.id)}>Complete</button>
           )}
         </li>
       ))}
