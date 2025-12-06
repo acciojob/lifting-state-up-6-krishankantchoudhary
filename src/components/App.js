@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div>
-      <h1>Todo App</h1>
+      <h1>Parent Component</h1>
       <TodoList todos={todos} onComplete={handleComplete} />
     </div>
   );
