@@ -6,13 +6,11 @@ function TodoApp() {
     { id: 1, text: "Learn React", completed: false },
     { id: 2, text: "Build a React app", completed: false },
     { id: 3, text: "Deploy the React app", completed: false },
-    
   ]);
 
   const handleComplete = (id) => {
-    // Update todo as completed
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
+    setTodos((prev) =>
+      prev.map((todo) =>
         todo.id === id ? { ...todo, completed: true } : todo
       )
     );
