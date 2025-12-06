@@ -5,7 +5,9 @@ function TodoList({ todos, onComplete }) {
     <ul>
       {todos.map((todo) => (
         <li key={todo.id}>
-          {todo.text}{" "}
+          {todo.text}
+
+          {/* SHOW BUTTON ONLY WHEN NOT COMPLETED */}
           {!todo.completed && (
             <button onClick={() => onComplete(todo.id)}>Complete</button>
           )}
