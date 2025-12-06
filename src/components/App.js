@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TodoList from "./TodoList";
 
-function TodoApp() {
+function App() {
   const [todos, setTodos] = useState([
     { id: 1, text: "Learn React", completed: false },
     { id: 2, text: "Build a React app", completed: false },
@@ -24,4 +24,4 @@ function TodoApp() {
   );
 }
 
-export default TodoApp;
+export default App;
